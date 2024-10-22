@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "SW Extension Name",
+  "name": "Content Extension Name",
   "description": "Extension Description",
   "version": "1.0.0",
   "action": {
@@ -9,5 +9,11 @@
   "background": {
     "service_worker": "sw.js"
   },
-  "permissions": ["alarms"]
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["tabs"]
 }

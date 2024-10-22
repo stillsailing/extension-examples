@@ -18,7 +18,9 @@
   <body>
     <div class="root">
       <div>
-        <input type="number" id="input-timer" />
+        <div>剩余 <span id="timer-rest">%</span> 秒</div>
+        <input type="number" id="input-timer" value="5" min="3" max="120" /> minutes
+        <br/>
         <button id="btn-set-timer">Set Timer</button>
       </div>
     </div>
