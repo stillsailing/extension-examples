@@ -16,8 +16,6 @@ importers:
 
   packages/popup: {}
 
-  packages/popup-template: {}
-
   packages/service-worker: {}
 
   packages/webpack-timer:
