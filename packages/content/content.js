@@ -29,9 +29,9 @@ document.addEventListener('visibilitychange', () => {
 })
 
 function flush() {
-  const diff = Date.now() - lastStamp
-  lastStamp = Date.now()
-  reduce += diff
+  const now = Date.now()
+  reduce += now - lastStamp
+  lastStamp = now
   chrome.runtime.sendMessage({
     type: 'update-timer',
     payload: Math.round((target - reduce) / 1000),
