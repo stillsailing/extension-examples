@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Content Extension Name",
+  "description": "Extension Description",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["tabs", "activeTab"]
+}
