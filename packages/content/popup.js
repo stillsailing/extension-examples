@@ -9,9 +9,10 @@ document.querySelector('#btn-set-timer').addEventListener('click', function () {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
+  updateRest()
   setInterval(() => {
     updateRest()
-  }, 2000)
+  }, 1000)
 })
 
 async function updateRest() {
