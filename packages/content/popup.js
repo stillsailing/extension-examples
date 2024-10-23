@@ -9,13 +9,11 @@ document.querySelector('#btn-set-timer').addEventListener('click', function () {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-  updateRest()
-  setInterval(() => {
-    updateRest()
-  }, 1000)
+  update()
 })
 
-async function updateRest() {
+async function update() {
   const response = await chrome.runtime.sendMessage({ type: 'get-timer' })
   text.textContent = +response
+  setTimeout(update, 1000)
 }

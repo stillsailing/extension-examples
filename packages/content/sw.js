@@ -35,7 +35,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 /**
  * @returns {Promise<chrome.tabs.Tab>}
  */
-async function getActiveTab() {
+function getActiveTab() {
   return new Promise((resolve) => {
     chrome.tabs.query({ active: true }, (tabs) => {
       resolve(tabs[0])
