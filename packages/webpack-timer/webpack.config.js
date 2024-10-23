@@ -1,40 +1,23 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const mode = process.env.NODE_ENV
 const isDev = mode === 'development'
-const devDirectory = 'dist'
+const devDirectory = 'dist-dev'
 const plugins = [
   new HtmlWebpackPlugin({
     filename: 'popup.html',
     template: './src/popup/template.html',
     chunks: ['popup'],
   }),
-  new HtmlWebpackPlugin({
-    filename: 'newtab.html',
-    template: './src/newtab/template.html',
-    chunks: ['newtab'],
-  }),
-  new MiniCssExtractPlugin(),
   new CopyWebpackPlugin({
     patterns: [{ from: './assets', to: '.' }],
-  }),
-  new FriendlyErrorsWebpackPlugin(),
-  new webpack.ProgressPlugin(),
-  new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify(mode),
-    'process.env.BASENAME': JSON.stringify(process.env.BASENAME),
   }),
 ]
 if (isDev) {
   plugins.push(new webpack.HotModuleReplacementPlugin())
-} else {
-  plugins.push(new CssMinimizerPlugin())
 }
 
 /**
@@ -45,7 +28,6 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   entry: {
     popup: './src/popup/index.tsx',
-    newtab: './src/newtab/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, isDev ? devDirectory : 'build'),
@@ -66,8 +48,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       '@src': path.resolve(__dirname, 'src/'),
-      '@src/utils': path.resolve(__dirname, 'src/utils/'),
-      '@src/common': path.resolve(__dirname, 'src/common/'),
     },
   },
   module: {
@@ -82,41 +62,10 @@ module.exports = {
         ],
       },
       {
-        include: /node_modules\/redux-logger/,
-        // redux-logger do not set sideEffects to false, manually set sideEffects to false
-        sideEffects: false,
-      },
-      {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: ['style-loader', 'css-loader'],
       },
     ],
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      cacheGroups: {
-        react: {
-          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-          name: 'react',
-          chunks: 'all',
-          enforce: true,
-          priority: 20,
-        },
-        rxjs: {
-          test: /[\\/]node_modules[\\/](rxjs)[\\/]/,
-          name: 'rxjs',
-          chunks: 'all',
-          enforce: true,
-          priority: 10,
-        },
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all',
-        },
-      },
-    },
   },
   plugins,
 }
