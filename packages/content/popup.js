@@ -4,19 +4,17 @@ const text = document.querySelector('#timer-rest')
 document.querySelector('#btn-set-timer').addEventListener('click', function () {
   chrome.runtime.sendMessage({
     type: 'set-timer',
-    payload: {
-      timeout: +input.value * 60,
-    },
+    payload: +input.value * 60,
   })
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-  setInterval(() => updateRest(), 1000)
+  setInterval(() => {
+    updateRest()
+  }, 2000)
 })
 
 async function updateRest() {
-  const rest = await chrome.runtime.sendMessage({
-    type: 'get-timer',
-  })
-  text.innerText = +rest
+  const response = await chrome.runtime.sendMessage({ type: 'get-timer' })
+  text.textContent = +response
 }

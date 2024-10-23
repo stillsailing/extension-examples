@@ -6,30 +6,28 @@ console.log('Service Worker Script')
  * @type {Map<string, number>}
  */
 const timers = new Map()
-let timer = 0 /** seconds */
-chrome.runtime.onMessage.addListener(async function (request, sender, sendResponse) {
-  const tab = await getActiveTab()
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.type === 'set-timer') {
-    timer = request.payload.timeout
-    if (tab) {
+    getActiveTab().then((tab) => {
       const host = new URL(tab.url).hostname
-      timers.set(host, timer)
-    }
+      timers.set(host, request.payload)
+    })
   }
   if (request.type === 'get-timer') {
-    if (tab) {
+    getActiveTab().then((tab) => {
       const host = new URL(tab.url).hostname
       sendResponse(timers.get(host))
-    }
+    })
   }
+  return true
 })
 
 /**
  * @returns {Promise<chrome.tabs.Tab>}
  */
-function getActiveTab() {
+async function getActiveTab() {
   return new Promise((resolve) => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.tabs.query({ active: true }, (tabs) => {
       resolve(tabs[0])
     })
   })
