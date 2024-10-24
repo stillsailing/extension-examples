@@ -28,6 +28,7 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   entry: {
     popup: './src/popup/index.tsx',
+    content: './src/content/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, isDev ? devDirectory : 'build'),

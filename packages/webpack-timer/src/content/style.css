@@ -1,0 +1,11 @@
+#extension-timer-message-root {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 40vh;
+  opacity: 0;
+  z-index: -999;
+  overflow: visible;
+}
