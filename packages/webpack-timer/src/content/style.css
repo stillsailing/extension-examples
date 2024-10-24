@@ -1,11 +1,28 @@
-#extension-timer-message-root {
+.timer-container {
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
   width: 400px;
-  height: 40vh;
-  opacity: 0;
-  z-index: -999;
+  background-color: transparent;
+  z-index: 9999;
   overflow: visible;
+  pointer-events: none;
+}
+
+.message-item {
+  margin-top: 20px;
+  width: 320px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  font-size: 16px;
+  padding: 16px 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: start;
 }

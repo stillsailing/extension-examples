@@ -3,4 +3,17 @@
   height: 200px;
   background-color: white;
   font-size: 16px;
+  padding: 20px;
+}
+
+.btn-set {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }

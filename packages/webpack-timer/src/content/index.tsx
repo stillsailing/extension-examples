@@ -1,5 +1,5 @@
-import { createPortal } from 'react-dom'
 import * as React from 'react'
+import { createRoot } from 'react-dom/client'
 import Message from './Message'
 import cssText from '!!raw-loader!./style.css'
 
@@ -18,4 +18,4 @@ function getRoot() {
   return root
 }
 
-createPortal(<Message />, getRoot())
+createRoot(getRoot()).render(<Message />)

@@ -28,6 +28,7 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   entry: {
     popup: './src/popup/index.tsx',
+    background: './src/background/index.ts',
     content: './src/content/index.tsx',
   },
   output: {
