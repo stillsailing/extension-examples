@@ -41,7 +41,7 @@ function flush() {
 function check() {
   if (reduce > target) {
     const message = `你已在当前页面停留了 ${target / 1000} 秒，到达设定时间`
-    showMessage(message, 3000)
+    showMessage(message, 5000)
     reset()
   }
 }

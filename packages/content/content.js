@@ -53,9 +53,14 @@ function reset() {
   lastStamp = null
 }
 
-setInterval(() => {
-  if (setupStamp && counting) {
-    flush()
-    check()
-  }
-}, 1000)
+function start() {
+  const id = setInterval(() => {
+    if (setupStamp && counting) {
+      flush()
+      check()
+    }
+  }, 1000)
+  return () => clearInterval(id)
+}
+
+start()
