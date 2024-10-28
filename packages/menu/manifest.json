@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Context Menu MDN",
+  "description": "Extension Description",
+  "version": "1.0.0",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["contextMenus"]
+}
