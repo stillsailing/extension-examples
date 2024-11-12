@@ -100,6 +100,14 @@ src: ./pages/content-script.md
 ---
 
 ---
+src: ./pages/omnibox-and-menu.md
+---
+
+---
+src: ./pages/extension-more.md
+---
+
+---
 src: ./pages/security.md
 ---
 
