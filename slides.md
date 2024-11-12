@@ -44,15 +44,15 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-transition: slide-left
+
+<Toc />
+
 ---
 
 [Chrome 浏览器插件商店](https://chromewebstore.google.com)
 
 ![store](./assets/store.png)
 
----
-transition: slide-left
 ---
 
 # 插件都可以做什么？
@@ -64,8 +64,6 @@ transition: slide-left
 5. 增强打开新标签页，可以替换浏览器打开新标签页，自定义任何内容，比如 [Clear New Tab](https://chromewebstore.google.com/detail/clear-new-tab/felphkbfjadmcejnibcmcncimlappdde) 可以替换默认新标签页，替换为一个简洁的空白页
 6. 增强开发者工具，比如 [Redux DevTools](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) 可以查看 Redux 状态树
 
----
-transition: slide-left
 ---
 
 # 如何开发插件
@@ -87,25 +85,24 @@ transition: slide-left
 
 ---
 src: ./pages/popup.md
-transition: slide-left
 ---
 
 ---
 src: ./pages/service-worker.md
-transition: slide-left
 ---
 
 ---
 src: ./pages/message.md
-transition: slide-left
 ---
 
 ---
 src: ./pages/content-script.md
-transition: slide-left
 ---
 
 ---
-src: ./pages/popup.md
-transition: slide-left
+src: ./pages/security.md
+---
+
+---
+src: ./pages/demo.md
 ---

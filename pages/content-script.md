@@ -1,4 +1,4 @@
-# Content Script 内容脚本
+# Content Script
 
 扩展程序可以插入内容脚本来读取、修改当前所访问网页内容。
 

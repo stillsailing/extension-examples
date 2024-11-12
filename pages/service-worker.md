@@ -1,4 +1,4 @@
-# Service Worker 后台脚本
+# Service Worker
 
 类似于 Web 页面中 Service Worker，扩展程序 Service Worker 也是持续运行在插件的整个生命周期，可以进行生命周期管理
 
