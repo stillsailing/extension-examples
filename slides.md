@@ -45,7 +45,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
-<Toc />
+<Toc columns="2" />
 
 ---
 
@@ -113,4 +113,8 @@ src: ./pages/security.md
 
 ---
 src: ./pages/demo.md
+---
+
+---
+src: ./pages/publish.md
 ---

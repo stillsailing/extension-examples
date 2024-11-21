@@ -8,6 +8,9 @@ layout: center
 
 ## 创建扩展程序播放器应用
 
+1. 在 Service Worker 中创建 Offsrceen Document
+2. 在 Offsrceen Document 中维护 Audio
+3. 最后在 Popup 中完成交互
 
 ---
 
