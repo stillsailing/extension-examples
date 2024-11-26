@@ -70,23 +70,19 @@ window.addEventListener("message", function (event) {
 
 <div class="flex-1">
 
-```json
-{
-  "commands": {
-    "disable-in-current-tab": {
-      "name": "在当前页面禁用",
-      "description": "禁用对当前页面的控制",
-    },
-  },
-}
-```
-
 ```js
-chrome.commands.onCommand.addListener((command) => {
-  if (command === 'disable-in-current-tab') {
-    func()
-  }
-});
+chrome.runtime.onInstalled.addListener(async () => {
+  chrome.contextMenus.create({
+    id: 'disable-in-current-tab',
+    title: '在当前页面禁用',
+    type: 'normal',
+    contexts: ['action'],
+  })
+})
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  // ...
+})
 ```
 
 </div>

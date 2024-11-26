@@ -7,6 +7,13 @@ chrome.runtime.onInstalled.addListener(async () => {
     type: 'normal',
     contexts: ['selection'],
   })
+
+  chrome.contextMenus.create({
+    id: 'disable-in-current-tab',
+    title: '在当前页面禁用',
+    type: 'normal',
+    contexts: ['action'],
+  })
 })
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
