@@ -118,3 +118,9 @@ src: ./pages/demo.md
 ---
 src: ./pages/publish.md
 ---
+
+---
+layout: center
+---
+
+# Thanks

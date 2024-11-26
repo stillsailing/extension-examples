@@ -63,3 +63,39 @@ window.addEventListener("message", function (event) {
 3. 访问敏感页面时，注意禁用插件，或者使用无痕模式（无痕模式下默认禁用所有插件）
 
 <img class="max-h-72" src="../assets/warning.png" />
+
+开发者在开发此类程序时，最好也手动提供方便禁用功能
+
+<div class="flex items-start justify-between gap-8">
+
+<div class="flex-1">
+
+```json
+{
+  "commands": {
+    "disable-in-current-tab": {
+      "name": "在当前页面禁用",
+      "description": "禁用对当前页面的控制",
+    },
+  },
+}
+```
+
+```js
+chrome.commands.onCommand.addListener((command) => {
+  if (command === 'disable-in-current-tab') {
+    func()
+  }
+});
+```
+
+</div>
+
+<div class="flex-1">
+  <img class="max-h-72" src="../assets/warning-setting.png" />
+</div>
+
+</div>
+
+
+

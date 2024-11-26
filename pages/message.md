@@ -62,5 +62,5 @@ chrome.runtime.onConnect.addListener((port) => {
 也还有其他的通信方式
 
 1. 使用 Storage API，chrome.storage 可以 set get 同时还支持监听变化，所有扩展程序脚本都可以访问共享存储。
-2. 跨扩展程序消息传递 (External Messaging)，声明 externally_connectable 权限
+2. 跨扩展程序消息传递 (External Messaging)，声明 externally_connectable 权限 (later)
 3. 借助服务端的任何第三方消息机制，如 Websocket 
