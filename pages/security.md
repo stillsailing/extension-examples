@@ -56,3 +56,10 @@ window.addEventListener("message", function (event) {
 重点关注：
 
 <img class="max-h-72" src="../assets/permission.png" />
+
+---
+---
+
+3. 访问敏感页面时，注意禁用插件，或者使用无痕模式（无痕模式下默认禁用所有插件）
+
+<img class="max-h-72" src="../assets/warning.png" />
