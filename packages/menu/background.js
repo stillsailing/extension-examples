@@ -2,17 +2,17 @@ console.log('Service Worker Script')
 
 chrome.runtime.onInstalled.addListener(async () => {
   chrome.contextMenus.create({
-    id: 'search-in-mdn',
-    title: 'Search in MDN"',
-    type: 'normal',
-    contexts: ['selection'],
-  })
-
-  chrome.contextMenus.create({
     id: 'disable-in-current-tab',
     title: '在当前页面禁用',
     type: 'normal',
     contexts: ['action'],
+  })
+
+  chrome.contextMenus.create({
+    id: 'image',
+    title: 'image',
+    type: 'normal',
+    contexts: ['frame'],
   })
 })
 
