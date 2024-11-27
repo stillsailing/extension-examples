@@ -100,7 +100,11 @@ src: ./pages/content-script.md
 ---
 
 ---
-src: ./pages/omnibox-and-menu.md
+src: ./pages/omnibox.md
+---
+
+---
+src: ./pages/context-menu.md
 ---
 
 ---
