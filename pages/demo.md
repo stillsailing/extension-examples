@@ -51,6 +51,27 @@ layout: center
 
 ---
 
-## Redux Dev Tools
+## Redux-Devtools
 
-跨扩展程序消息传递 (External Messaging)
+首先回顾一下如何使用？
+
+```js
+const composeEnhancers =  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() 
+    : compose;
+
+const store = createStore(reducer, composeEnhancers(applyMiddleware(...middlewares)))
+```
+
+这里 `window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__` 由扩展程序提供，增强 redux 的 compose 方法，作为 Redux-Devtools 和 Redux 应用的通信桥梁
+
+使用 `window.postMessage` 和  `window.onMessage` 实现 App 和 Content Script 的通信，Content Script 作为桥梁再和 Service Worker 和 Devtools 通信，实现跨应用程序消息传递
+
+```
+App <==> Content Script <==> Service Worker/Devtools
+```
+
+> 为什么是增强 compose 而不是 middleware?
+
+---
+
