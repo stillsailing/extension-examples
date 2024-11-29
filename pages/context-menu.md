@@ -15,7 +15,6 @@
 
 可以区分更多场景来扩展菜单
 
-
 - page Tab 页面
 - frame `iframe`
 - link 链接 `<a>` 标签右键出现
@@ -24,10 +23,10 @@
 - audio 音频
 - selection 选中文字
 - editable 可编辑元素
+- action 插件图标右键
 - launcher 浏览器操作（browser action）按钮的右键菜单中。
 - browser_action 等同于 launcher，向后兼容而保留。
 - page_action 页面操作（page action）按钮的右键菜单中。
-- action 插件图标右键
 - all 所有场景
 
 ---

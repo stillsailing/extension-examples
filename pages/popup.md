@@ -19,3 +19,5 @@
 1. 打开 chrome://extensions/ 页面。
 2. 开启开发者模式。
 3. 点击“加载未打包的扩展程序”，选择扩展程序文件夹。
+
+<img class="max-h-72 mt-8" src="../assets/devmode.png" />

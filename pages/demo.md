@@ -6,14 +6,6 @@ layout: center
 
 ---
 
-## 创建扩展程序播放器应用
-
-1. 在 Service Worker 中创建 Offsrceen Document
-2. 在 Offsrceen Document 中维护 Audio
-3. 最后在 Popup 中完成交互
-
----
-
 ## AdBlock
 
 1. 维护广告过滤规则
@@ -47,10 +39,6 @@ layout: center
 
 ---
 
-## SwitchyOmega
-
----
-
 ## Redux-Devtools
 
 首先回顾一下如何使用？
@@ -72,6 +60,3 @@ App <==> Content Script <==> Service Worker/Devtools
 ```
 
 > 为什么是增强 compose 而不是 middleware?
-
----
-
